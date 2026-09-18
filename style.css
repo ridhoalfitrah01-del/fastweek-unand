@@ -1,0 +1,815 @@
+/* =========================================
+   FASTWEEK UNAND XII
+   LINK IN BIO
+   ========================================= */
+
+
+/* =========================================
+   RESET
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+    color: #172617;
+    overflow-x: hidden;
+    background: #eef5f0;
+}
+
+
+/* =========================================
+   BACKGROUND
+   ========================================= */
+
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+
+    background-image: url("../assets/background.jpg");
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    transform: scale(1.01);
+}
+
+
+/* Lapisan putih transparan
+   supaya tulisan tetap mudah dibaca */
+
+.background-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(255, 255, 255, 0.08) 0%,
+            rgba(255, 255, 255, 0.18) 35%,
+            rgba(255, 255, 255, 0.10) 100%
+        );
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   CONTAINER
+   ========================================= */
+
+.container {
+    width: min(100%, 680px);
+    margin: 0 auto;
+    padding: 32px 20px 50px;
+}
+
+
+/* =========================================
+   PROFILE
+   ========================================= */
+
+.profile {
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: 30px;
+}
+
+
+/* =========================================
+   LOGO
+   ========================================= */
+
+.profile-logo {
+    width: 118px;
+    height: 118px;
+
+    margin: 0 auto 16px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    padding: 7px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.18),
+        0 0 0 4px rgba(255, 255, 255, 0.35);
+
+    overflow: hidden;
+
+    animation: logoAppear 0.8s ease both;
+}
+
+.profile-logo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    display: block;
+}
+
+
+/* =========================================
+   TITLE
+   ========================================= */
+
+.profile h1 {
+    font-family: "DM Serif Display", serif;
+
+    font-size: clamp(30px, 7vw, 44px);
+
+    line-height: 1.1;
+
+    letter-spacing: 0.5px;
+
+    color: #172617;
+
+    text-shadow:
+        0 2px 10px rgba(255, 255, 255, 0.75);
+
+    animation: fadeUp 0.7s 0.15s ease both;
+}
+
+
+.profile-description {
+    margin-top: 8px;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    color: #314a31;
+
+    text-shadow:
+        0 1px 5px rgba(255, 255, 255, 0.8);
+
+    animation: fadeUp 0.7s 0.25s ease both;
+}
+
+
+/* =========================================
+   SOCIAL MEDIA
+   ========================================= */
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 13px;
+
+    margin-top: 18px;
+
+    animation: fadeUp 0.7s 0.35s ease both;
+}
+
+
+.social-button {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    text-decoration: none;
+
+    color: #172617;
+
+    background: rgba(255, 255, 255, 0.88);
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    box-shadow:
+        0 7px 20px rgba(0, 0, 0, 0.12);
+
+    font-size: 22px;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.social-button:hover {
+    transform: translateY(-4px) scale(1.05);
+
+    background: rgba(255, 255, 255, 1);
+
+    box-shadow:
+        0 12px 25px rgba(0, 0, 0, 0.18);
+}
+
+
+.social-button:active {
+    transform: scale(0.94);
+}
+
+
+/* =========================================
+   SECTION
+   ========================================= */
+
+.link-section {
+    margin-top: 30px;
+
+    animation: fadeUp 0.7s ease both;
+}
+
+
+.link-section h2 {
+    text-align: center;
+
+    font-family: "DM Serif Display", serif;
+
+    font-size: 22px;
+
+    letter-spacing: 0.2px;
+
+    color: #172617;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 2px 8px rgba(255, 255, 255, 0.85);
+}
+
+
+/* =========================================
+   LINK CARD
+   ========================================= */
+
+.link-card {
+    position: relative;
+
+    min-height: 72px;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 14px;
+
+    border-radius: 22px;
+
+    background:
+        rgba(255, 255, 255, 0.90);
+
+    border: 1px solid rgba(255, 255, 255, 0.75);
+
+    box-shadow:
+        0 8px 25px rgba(24, 55, 25, 0.12);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+
+    animation: cardAppear 0.7s ease both;
+}
+
+
+/* Hover */
+
+.link-card:hover {
+    transform: translateY(-3px);
+
+    background:
+        rgba(255, 255, 255, 0.97);
+
+    box-shadow:
+        0 14px 32px rgba(24, 55, 25, 0.18);
+}
+
+
+/* Saat ditekan */
+
+.link-card:active {
+    transform: scale(0.985);
+}
+
+
+/* =========================================
+   ICON
+   ========================================= */
+
+.link-icon {
+    flex: 0 0 62px;
+
+    width: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 25px;
+
+    user-select: none;
+}
+
+
+/* =========================================
+   LINK CONTENT
+   ========================================= */
+
+.link-content {
+    flex: 1;
+
+    min-width: 0;
+
+    display: flex;
+    align-items: center;
+
+    min-height: 72px;
+
+    padding: 13px 4px;
+
+    color: #172617;
+
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    line-height: 1.35;
+
+    text-align: center;
+
+    transition:
+        color 0.2s ease;
+}
+
+
+.link-content span {
+    width: 100%;
+}
+
+
+.link-content:hover {
+    color: #315d2f;
+}
+
+
+/* =========================================
+   MORE BUTTON
+   ========================================= */
+
+.more-button {
+    flex: 0 0 52px;
+
+    width: 52px;
+    height: 72px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #263326;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.more-button:hover {
+    background: rgba(0, 0, 0, 0.04);
+
+    transform: scale(1.08);
+}
+
+
+.more-button:active {
+    transform: scale(0.9);
+}
+
+
+/* =========================================
+   CARD VARIATION
+   ========================================= */
+
+/* Memberi jarak visual antar kategori */
+
+.link-section + .link-section {
+    margin-top: 38px;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+.footer {
+    text-align: center;
+
+    margin-top: 42px;
+
+    padding-bottom: 10px;
+
+    color: #294029;
+
+    text-shadow:
+        0 1px 5px rgba(255, 255, 255, 0.8);
+}
+
+
+.footer p {
+    font-family: "DM Serif Display", serif;
+
+    font-size: 18px;
+
+    margin-bottom: 4px;
+}
+
+
+.footer span {
+    font-size: 11px;
+
+    opacity: 0.8;
+}
+
+
+/* =========================================
+   ANIMATIONS
+   ========================================= */
+
+@keyframes logoAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.75) translateY(-15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+
+}
+
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE - HP KECIL
+   ========================================= */
+
+@media (max-width: 420px) {
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 25px;
+    }
+
+
+    .profile-logo {
+        width: 105px;
+        height: 105px;
+    }
+
+
+    .profile h1 {
+        font-size: 31px;
+    }
+
+
+    .profile-description {
+        font-size: 12px;
+    }
+
+
+    .link-section h2 {
+        font-size: 20px;
+    }
+
+
+    .link-card {
+        min-height: 68px;
+        border-radius: 20px;
+    }
+
+
+    .link-icon {
+        flex-basis: 52px;
+        width: 52px;
+        font-size: 22px;
+    }
+
+
+    .link-content {
+        min-height: 68px;
+
+        font-size: 12px;
+
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
+
+    .more-button {
+        flex-basis: 43px;
+        width: 43px;
+        height: 68px;
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE - TABLET / DESKTOP
+   ========================================= */
+
+@media (min-width: 768px) {
+
+    .container {
+        padding-top: 50px;
+        padding-bottom: 70px;
+    }
+
+
+    .profile-logo {
+        width: 135px;
+        height: 135px;
+    }
+
+
+    .link-card {
+        min-height: 76px;
+    }
+
+
+    .link-content {
+        min-height: 76px;
+        font-size: 15px;
+    }
+
+
+    .more-button {
+        height: 76px;
+    }
+
+}
+
+/* =========================================
+   PROFESSIONAL ICONS
+   ========================================= */
+
+.link-icon i {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: rgba(42, 93, 45, 0.10);
+
+    color: #285b2c;
+
+    font-size: 18px;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease;
+}
+
+
+.link-card:hover .link-icon i {
+    transform: scale(1.08);
+
+    background: rgba(42, 93, 45, 0.16);
+
+    color: #1f4c23;
+}
+
+
+/* Social icons */
+
+.social-button i {
+    font-size: 19px;
+}
+
+
+/* Ikon more */
+
+.more-button {
+    position: relative;
+}
+
+/* =========================================
+   PREMIUM LINK CARD
+   ========================================= */
+
+.link-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 4px;
+
+    background: #4f8f45;
+
+    opacity: 0;
+
+    transform: scaleY(0.4);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.link-card:hover::before {
+    opacity: 1;
+
+    transform: scaleY(1);
+}
+
+
+.link-card:hover .more-button {
+    color: #285b2c;
+}
+
+/* =========================================
+   SECTION TITLE
+   ========================================= */
+
+.link-section h2 {
+    position: relative;
+
+    display: table;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 0 18px;
+}
+
+
+.link-section h2::before,
+.link-section h2::after {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+
+    width: 25px;
+
+    height: 1px;
+
+    background: rgba(40, 91, 44, 0.45);
+}
+
+
+.link-section h2::before {
+    right: 100%;
+}
+
+
+.link-section h2::after {
+    left: 100%;
+}
+
+/* =========================================
+   PROFILE AREA
+   ========================================= */
+
+.profile {
+    position: relative;
+
+    padding: 20px 15px 22px;
+
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.18);
+
+    border: 1px solid rgba(255, 255, 255, 0.35);
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    box-shadow:
+        0 10px 35px rgba(30, 70, 30, 0.08);
+}
+
+/* =========================================
+   EXTRA MOBILE POLISH
+   ========================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        min-height: 100dvh;
+    }
+
+
+    .container {
+        width: 100%;
+
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+
+    .profile {
+        padding-left: 10px;
+        padding-right: 10px;
+
+        border-radius: 26px;
+    }
+
+
+    .link-card {
+        box-shadow:
+            0 7px 22px rgba(24, 55, 25, 0.14);
+    }
+
+
+    .link-content {
+        font-size: 12.5px;
+    }
+
+
+    .link-icon {
+        flex-basis: 56px;
+        width: 56px;
+    }
+
+
+    .link-icon i {
+        width: 38px;
+        height: 38px;
+
+        border-radius: 12px;
+
+        font-size: 16px;
+    }
+
+}
