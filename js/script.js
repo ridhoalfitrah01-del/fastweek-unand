@@ -46,7 +46,7 @@ const links = {
         "https://docs.google.com/forms/d/e/1FAIpQLSd_yl95vIulmIlpXNu3VD6oFe2m15eH05Y5O73f5byHC2hNzA/viewform?usp=publish-editor",
 
     debatMahasiswa:
-        "https://docs.google.com/forms/d/e/1FAIpQLSeACIVOKjE2qmnbwj5acv6JGtw8F8obuG1GRLex8nVpot_Y3A/viewform?usp=header",
+        "https://docs.google.com/forms/d/e/1FAIpQLSc5ZcfN7RIRsg7T7mfmvYYjNepb_zH5Xy71YLyFF_pCNm6puw/viewform",
 
 
     /* =========================
